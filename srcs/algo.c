@@ -69,7 +69,17 @@ int			display_values(WINDOW *game_win, int *tbl, int len)
 
 static int	check_arg(int ac, char **av)
 {
+	int			i;
+
 	srand(time(NULL));
+	i = 1;
+	while (i <= WIN_VALUE)
+		i *= 2;
+	if (i != WIN_VALUE)
+	{
+		ft_putendl("WIN_VALUE must be a power of 2! Please redefine WIN_VALUE");
+		return (0);
+	}
 	if (ac == 2 && ((ft_strcmp(av[1], "5") == 0 || ft_strcmp(av[1], "4") == 0)))
 		return (ft_atoi(av[1]));
 	if (ac > 2 || (ac > 1 && (ft_strcmp(av[1], "5") && ft_strcmp(av[1], "4"))))

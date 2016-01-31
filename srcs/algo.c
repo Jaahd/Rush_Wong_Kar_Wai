@@ -67,16 +67,29 @@ int			display_values(WINDOW *game_win, int *tbl, int len)
 	return (0);
 }
 
-int			main()
+static int	check_arg(int ac, char **av)
+{
+	srand(time(NULL));
+	if (ac == 2 && ((ft_strcmp(av[1], "5") == 0 || ft_strcmp(av[1], "4") == 0)))
+		return (ft_atoi(av[1]));
+	if (ac > 2 || (ac > 1 && (ft_strcmp(av[1], "5") && ft_strcmp(av[1], "4"))))
+	{
+		ft_putendl("square side must be define betreen 4 and 5");
+		return (0);
+	}
+	return (4);
+}
+
+int			main(int ac, char **av)
 {
 	WINDOW		*game_win;
 	int			*tbl;
 	int			win;
 	int			len;
 
-	srand(time(NULL));
+	if ((len = check_arg(ac, av)) == 0)
+		return (0);
 	game_win = init_ncurses();
-	len = 4;
 	win = 0;
 	tbl = (int *)malloc(sizeof(int) * (len * len));
 	init_tbl(&tbl, len);

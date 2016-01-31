@@ -75,7 +75,6 @@ static int	check_arg(int ac, char **av)
 	i = 1;
 	while (i < WIN_VALUE)
 		i *= 2;
-	printf ("%d\n", i);
 	if (i != WIN_VALUE)
 	{
 		ft_putendl("WIN_VALUE must be a power of 2! Please redefine WIN_VALUE");

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_victory.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/31 22:25:52 by avacher           #+#    #+#             */
+/*   Updated: 2016/01/31 22:25:52 by avacher          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <ncurses.h>
 #include "game_2048.h"
@@ -16,18 +28,15 @@ int			check_victory(int *tbl, int len)
 	return (0);
 }
 
-int			check_defeat(int *tbl, int len)	
+int			check_defeat(int *tbl, int len)
 {
 	int			*tmp;
 	int			i;
-	
+
 	tmp = (int *)malloc(sizeof(int) * (len * len));
-	i = 0;
-	while (i < (len * len))
-	{
+	i = -1;
+	while (++i < (len * len))
 		tmp[i] = tbl[i];
-		i++;
-	}
 	left_arrow(&tmp, len);
 	right_arrow(&tmp, len);
 	up_arrow(&tmp, len);
@@ -43,7 +52,7 @@ int			check_defeat(int *tbl, int len)
 		i++;
 	}
 	free(tmp);
-	return (1);	
+	return (1);
 }
 
 int			winorlose(WINDOW *game_win, int *tbl, int len, int *win)
@@ -53,7 +62,7 @@ int			winorlose(WINDOW *game_win, int *tbl, int len, int *win)
 		*win = 1;
 		display_values(game_win, tbl, len);
 		display_message(game_win, 1);
-		while(TRUE)
+		while (TRUE)
 			if (wgetch(game_win))
 				break ;
 	}

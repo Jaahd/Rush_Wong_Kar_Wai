@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_keys.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/31 22:25:52 by avacher           #+#    #+#             */
+/*   Updated: 2016/01/31 22:25:52 by avacher          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "game_2048.h"
 
 int			switch_values(int **tbl, int i, int j)
@@ -26,22 +38,22 @@ int			add_values(int **tbl, int i, int j)
 	return (0);
 }
 
-int				get_keys(WINDOW *game_win, int **tbl, int len)
+int			get_keys(WINDOW *game_win, int **tbl, int len)
 {
-	int				key;
+	int			key;
 
 	key = wgetch(game_win);
 	if (key == 27)
 		return (1);
-	if(key == KEY_DOWN)	
+	if (key == KEY_DOWN)
 		down_arrow(tbl, len);
-	if(key == KEY_UP)	
+	if (key == KEY_UP)
 		up_arrow(tbl, len);
-	if(key == KEY_LEFT)	
+	if (key == KEY_LEFT)
 		left_arrow(tbl, len);
-	if(key == KEY_RIGHT)
+	if (key == KEY_RIGHT)
 		right_arrow(tbl, len);
 	if (key == KEY_DOWN || key == KEY_RIGHT || key == KEY_LEFT || key == KEY_UP)
 		rand_nb_in_pos(tbl, len, 1);
-	return 0;
+	return (0);
 }

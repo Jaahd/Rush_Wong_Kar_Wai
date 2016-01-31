@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game_2048.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/31 22:25:52 by avacher           #+#    #+#             */
+/*   Updated: 2016/01/31 22:25:52 by avacher          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef GAME_2048_H
 # define GAME_2048_H
 
-#include <ncurses.h>
-#include "libft.h"
+# include <ncurses.h>
+# include "libft.h"
 
 enum		e_const
 {
-	WIN_VALUE = 2048 
+	WIN_VALUE = 2048
 };
 
 int			resize(WINDOW *toto, int len);

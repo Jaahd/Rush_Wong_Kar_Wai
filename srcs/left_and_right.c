@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   left_and_right.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/31 22:25:52 by avacher           #+#    #+#             */
+/*   Updated: 2016/01/31 22:25:52 by avacher          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "game_2048.h"
 
 static int			align_left(int **tbl, int len)
@@ -26,7 +38,7 @@ static int			align_left(int **tbl, int len)
 	return (0);
 }
 
-int			left_arrow(int **tbl, int len)
+int					left_arrow(int **tbl, int len)
 {
 	int		i;
 	int		j;
@@ -79,7 +91,7 @@ static int			align_right(int **tbl, int len)
 	return (0);
 }
 
-int			right_arrow(int **tbl, int len)
+int					right_arrow(int **tbl, int len)
 {
 	int		i;
 	int		j;

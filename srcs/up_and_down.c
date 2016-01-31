@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   up_and_down.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/31 22:25:52 by avacher           #+#    #+#             */
+/*   Updated: 2016/01/31 22:25:52 by avacher          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "game_2048.h"
 
-int			align_down(int **tbl, int len)
+static int			align_down(int **tbl, int len)
 {
 	int		i;
 	int		j;
@@ -26,7 +38,7 @@ int			align_down(int **tbl, int len)
 	return (0);
 }
 
-int			down_arrow(int **tbl, int len)
+int					down_arrow(int **tbl, int len)
 {
 	int		i;
 	int		j;
@@ -53,7 +65,7 @@ int			down_arrow(int **tbl, int len)
 	return (0);
 }
 
-int			align_up(int **tbl, int len)
+static int			align_up(int **tbl, int len)
 {
 	int		i;
 	int		j;
@@ -79,7 +91,7 @@ int			align_up(int **tbl, int len)
 	return (0);
 }
 
-int			up_arrow(int **tbl, int len)
+int					up_arrow(int **tbl, int len)
 {
 	int		i;
 	int		j;
@@ -105,4 +117,3 @@ int			up_arrow(int **tbl, int len)
 	align_up(tbl, len);
 	return (0);
 }
-

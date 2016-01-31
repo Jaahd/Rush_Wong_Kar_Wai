@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   random.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/31 22:25:52 by avacher           #+#    #+#             */
+/*   Updated: 2016/01/31 22:25:52 by avacher          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <ncurses.h>
@@ -23,11 +35,11 @@ static int		rand_nb(void)
 	return (nb);
 }
 
-void		rand_nb_in_pos(int **tbl, int len, int again)
+void			rand_nb_in_pos(int **tbl, int len, int again)
 {
 	int		i;
 	int		cpt;
-	int 	case_num;
+	int		case_num;
 
 	while (again > 0)
 	{
@@ -50,7 +62,7 @@ void		rand_nb_in_pos(int **tbl, int len, int again)
 	}
 }
 
-void		init_tbl(int **tbl, int len)
+void			init_tbl(int **tbl, int len)
 {
 	int		i;
 

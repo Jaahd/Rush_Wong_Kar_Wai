@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   testv5.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avacher <avacher@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/01/31 22:25:52 by avacher           #+#    #+#             */
+/*   Updated: 2016/01/31 22:25:52 by avacher          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <ncurses.h>
 #include <unistd.h>
 #include "game_2048.h"
 
-void    set_grid_x(WINDOW *field, int parent_y, int parent_x, int len)
+void		set_grid_x(WINDOW *field, int parent_y, int parent_x, int len)
 {
-	int     i;
-	int     j;
+	int		i;
+	int		j;
 
 	i = 1;
 	while (i < len)
 	{
 		j = 0;
-		while (j <= parent_y) 
+		while (j <= parent_y)
 		{
 			mvwprintw(field, j, ((parent_x / len) * i), "|");
 			j++;
@@ -20,10 +32,10 @@ void    set_grid_x(WINDOW *field, int parent_y, int parent_x, int len)
 	}
 }
 
-void    set_grid_y(WINDOW *field, int parent_y, int parent_x, int len)
+void		set_grid_y(WINDOW *field, int parent_y, int parent_x, int len)
 {
-	int     i;
-	int     j;
+	int		i;
+	int		j;
 
 	i = 1;
 	while (i < len)
@@ -47,5 +59,5 @@ int			resize(WINDOW *field, int len)
 	wclear(field);
 	set_grid_x(field, new_y, new_x, len);
 	set_grid_y(field, new_y, new_x, len);
-	return 0;
+	return (0);
 }
